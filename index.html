@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYKD</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="./assets/css/root.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/ressponsive.css">
+</head>
+<body>
+    <!-- BEGIN: Header -->
+    <header>
+        <div id="sticky-header" class="header__area">
+            <!-- Main header -->
+            <div class="grid">
+                <nav class="menu__nav">
+                    <div class="row no-gutters align-center">
+                        <div class="col l-2 m-4 c-8">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="./assets/imgs/logo.png" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col l-7 m-0 c-0">
+                            <div class="menu__navbar-wrap">
+                                <ul class="navigation row" id="navigation">
+                                    <li class="nav-item active"><a href="index.html">Home</a></li>
+                                    <li class="nav-item"><a href="#">About</a></li>
+                                    <li class="nav-item menu-item-has-children">
+                                        <a href="#">TOURNAMENT</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">TOURNAMENT</a></li>
+                                            <li><a href="#">TOURNAMENT single</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item menu-item-has-children">
+                                        <a href="#">Page</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Gaming shop</a></li>
+                                            <li><a href="#">Shop details</a></li>
+                                            <li><a href="#">Our services</a></li>
+                                            <li><a href="#">Services details</a></li>
+                                            <li><a href="#">Player details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item menu-item-has-children">
+                                        <a href="#">News</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Our blog</a></li>
+                                            <li><a href="#">Blog details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item"><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col l-3 m-7 c-0">
+                            <div class="menu__action">
+                                <ul class="list-wrap row align-center">
+                                    <li class="search menu__action-search"><a href="#">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </a></li>
+                                    <li class="header-btn">
+                                        <a href="#" class="border-btn">
+                                            <i class="fa-regular fa-pen-to-square"></i>
+                                            <span>~Sign in</span>
+                                        </a>
+                                    </li>
+                                    <li class="side-toggle-icon row">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col l-0 m-1 c-4">
+                            <div class="nav-toggler">
+                                <i class="fa-solid fa-bars"></i>
+                            </div>
+                        </div>
+                    </div>   
+                </nav>
+                
+            </div>
+
+            <!-- Mobile menu wrap -->
+            <div class="offCanvas__wrap offCanvas__overlay">
+                <div class="mobile-menu-wrap">
+                    <nav class="mobile-menu">
+                        <div class="row no-gutters">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="./assets/imgs/logo.png" alt="">
+                                </a>
+                                <i class="close-modal fa-brands fa-wolf-pack-battalion"></i>
+                            </div>
+                            <div class="moblie-search">
+                                <div class="inp-search">
+                                    <input type="text" placeholder="Search here...">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                            </div>
+                            <div class="menu__navbar-wrap mobile-menu__navbar-wrap" id="mobile-menu__navbar-wrap">
+                                <ul class="row no-gutters menu-list">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="#">About</a></li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">TOURNAMENT</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="/">TOURNAMENT</a></li>
+                                            <li><a href="#">TOURNAMENT single</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">Page</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Gaming shop</a></li>
+                                            <li><a href="#">Shop details</a></li>
+                                            <li><a href="#">Our services</a></li>
+                                            <li><a href="#">Services details</a></li>
+                                            <li><a href="#">Player details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="#">News</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Our blog</a></li>
+                                            <li><a href="#">Blog details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                            <div class="social-links">
+                                <ul class="list-wrap">
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <!-- Search popup -->
+            <div class="offCanvas__wrap offCanvas__overlay">
+                <div class="row no-gutters search__popup-wrap">
+                    <div class="c-12 search__content">
+                        <div class="close-search">
+                            <i class="close-modal fa-brands fa-wolf-pack-battalion"></i>
+                        </div>
+                        <div class="search-content">
+                            <h2 class="search-tit">... search here ...</h2>
+                            <div class="search-form">
+                                <div class="inp-search">
+                                    <input type="text" placeholder="Type keywords here">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OfffCanvas wrap -->
+            <div class="offCanvas__wrap offCanvas__overlay">
+                <div class="offCanvas-body">
+                    <div class="offCanvas-top">
+                        <a href="index.html">
+                            <img src="./assets/imgs/logo.png" alt="">
+                        </a>
+                        <i class="close-modal fa-brands fa-wolf-pack-battalion"></i>
+                    </div>
+                    <div class="offCanvas-content">
+                        <h2 class="tit">
+                            BEST SELLER OF MONTH IDEAS FOR <span>NFT WALLET</span> 
+                        </h2>
+                        <div class="offCanvas-contact">
+                            <h4>Contact us</h4>
+                            <ul>
+                                <li>
+                                    <a href="#">+9 333 222 5557</a>
+                                </li>
+                                <li>
+                                    <a href="">info@webmail.com</a>
+                                </li>
+                                <li>
+                                    New Central Park W7 Street, New York
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="offCanvas__newsletter">
+                            <h4>Subscribe</h4>
+                            <form action="" class="offCanvas__newsletter-form">
+                                <input type="text" placeholder="Get News & Updates">
+                                <i class="fa-solid fa-play"></i>
+                            </form>
+                            <p>Subscribe dolor sitamet, consectetur adiping eli. Duis esollici tudin augue.</p>
+                        </div>
+                        <ul class="offCanvas__social">
+                            <div class="social-links">
+                                <ul class="list-wrap">
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="offCanvas-copyright">
+                        <p>COPYRIGHT © 2023 - <span>BY MYKD</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- END: Header -->
+    <!-- BEGIN: Main -->
+    <main>
+        <div id="home-wrap" class="home-wrap">
+            <div class="slider-area main-area">
+                <section class="breadcrumb-area">
+                    <div class="container row align-center">
+                        <div class="col l-6 m-6 c-12">
+                            <div class="slider-content">
+                                <h4 class="sub-tit">
+                                    Live gaming
+                                </h4>
+                                <h2 class="tit">
+                                    steaming
+                                </h2>
+                                <p>Video games online</p>
+                                <div class="slider-btn">
+                                    <button>
+                                        Contact us
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col l-6 m-6 c-12">
+                            <div class="slider-img">
+                                <img src="./assets/imgs/slider/slider_img01.png" alt="">
+                            </div>
+                        </div>
+                        <!--  -->
+                        <div class="slider__brand">
+                            <a href=""><img src="./assets/imgs/brand/brand_logo01.png" alt=""></a>
+                            <a href=""><img src="./assets/imgs/brand/brand_logo02.png" alt=""></a>
+                            <a href=""><img src="./assets/imgs/brand/brand_logo03.png" alt=""></a>
+                        </div>
+                    </div>
+                    
+                </section>
+            </div>
+        </div>
+
+
+        <div id="contact-wrap" class="main-area contact-wrap">
+            <section class="breadcrumb-area">
+                <div class="container row">
+                    <h2 class="tit">Contact us</h2>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="breadcrumb-item">Contact</li>
+                    </ul>
+                </div>
+            </section>
+            <section class="contact-area">
+                <div class="row no-gutters align-center">
+                    <div class="col l-6 m-12 c-12">
+                        <div class="contact-content">
+                            <h2 class="overlay-tit">Join us</h2>
+                            <h2 class="tit">Contact us and find your mykd</h2>
+                            <p>Axcepteur sint occaecat atat non proident, sunt culpa officia deserunt mollit anim id est labor umLor emdolor</p>
+                            <div class="footer-contact offCanvas-contact">
+                                <h4>
+                                    <span>
+                                        <i class="fa-solid fa-caret-left"></i>
+                                        <i class="fa-solid fa-caret-right"></i>
+                                    </span>
+                                    Informaiton
+                                </h4>
+                                <ul>
+                                    <li>
+                                        <a href="#">+9 333 222 5557</a>
+                                    </li>
+                                    <li>
+                                        <a href="">info@webmail.com</a>
+                                    </li>
+                                    <li>
+                                        New Central Park W7 Street, New York
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l-6 m-12 c-12">
+                        <div class="contact-form">
+                           <form action="">
+                                <div class="row no-gutters">
+                                    <div class="col c-6">
+                                        <input type="text" placeholder="Name *">
+                                    </div>
+                                    <div class="txt-email col c-6">
+                                        <input type="email" name="" id="" placeholder="Email *">
+                                    </div>
+                                    <div class="col c-12">
+                                        <textarea name="" id="" cols="30" rows="10" placeholder="Enter your message"></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit">Submit now</button>
+                           </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="contact-map">
+                <map name=""><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d94574.79419594568!2d-122.24513015577564!3d47.59360277800524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54905cd60a0f8665%3A0xb743760ba1ebf01b!2sAudi%20Bellevue!5e0!3m2!1svi!2s!4v1685288732017!5m2!1svi!2s" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </map>
+            </section>
+        </div>
+    </main>
+    <!-- END: Main -->
+    <!-- BEGIN: Footer -->
+    <footer class="footer-style">
+        <div class="footer-wrap">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col l-4 m-8 c-12">
+                        <div class="footer-widget">
+                            <div class="footer-logo">
+                                <img src="./assets/imgs/logo.png" alt="">
+                            </div>
+                            <div class="footer-txt">
+                                <p>Lorem ipsum dolor sitamet consectur adipiscing Duis esollici tudin augue euismod. Nulla ullam dolor sitamet consectetur</p>
+                                <div class="social-links">
+                                    <h4>Active <span>with us >></span></h4>
+                                    <ul>
+                                        <li><a href="">
+                                            <img src="./assets/imgs/icons/social_icon01.png" alt="">
+                                        </a></li>
+                                        <li><a href="">
+                                            <img src="./assets/imgs/icons/social_icon02.png" alt="">
+                                        </a></li>
+                                        <li><a href="">
+                                            <img src="./assets/imgs/icons/social_icon03.png" alt="">
+                                        </a></li>
+                                        <li><a href="">
+                                            <img src="./assets/imgs/icons/social_icon04.png" alt="">
+                                        </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col l-2 m-4 c-12">
+                        <div class="footer-widget widget_nav_menu">
+                            <h4 class="tit">Quick link</h4>
+                            <ul class="list">
+                                <li class="item"><a href="">Gaming</a></li>
+                                <li class="item"><a href="">Product</a></li>
+                                <li class="item"><a href="">All NFTs</a></li>
+                                <li class="item"><a href="">Social Network</a></li>
+                                <li class="item"><a href="">Domain Names</a></li>
+                                <li class="item"><a href="">Collectibles</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col l-2 m-4 c-12">
+                        <div class="footer-widget widget_nav_menu">
+                            <h4 class="tit">Quick link</h4>
+                            <ul class="list">
+                                <li class="item"><a href="">Setting & Privacy</a></li>
+                                <li class="item"><a href="">Help & Support</a></li>
+                                <li class="item"><a href="">Live Auctions</a></li>
+                                <li class="item"><a href="">Item Details</a></li>
+                                <li class="item"><a href="">24/7 Supports</a></li>
+                                <li class="item"><a href="">Our News</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col l-4 m-8 c-12">
+                        <div class="footer-widget">
+                            <h4 class="tit">Newsletter</h4>
+                            <p>Subscribe our newsletter to get our latest update & newsconsectetur</p>
+                            <div class="footer-form">
+                                <input type="email" name="" id="" placeholder="Your email address">
+                                <i class="fa-solid fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="grid wide">
+                <div class="row align-center">
+                    <div class="offCanvas-copyright col m-6 c-12">
+                        <p>COPYRIGHT © 2023 - ALL RIGHTS RESERVED BY <span>BY MYKD</span></p>
+                    </div>
+                    <div class="img-paycart col m-6 c-12">
+                        <img src="./assets/imgs/others/payment_cart.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END: Footer -->
+</body>
+<script src="./js/main.js"></script>
+</html>
