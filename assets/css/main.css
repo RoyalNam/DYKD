@@ -1,5 +1,4 @@
 /* BEGIN: HEADER */
-
 #sticky-header{
 
 }
@@ -12,7 +11,7 @@
     padding: 12px 24px;
     width: 100%;
 }
-/* Logo */
+/* -> Logo */
 .menu__nav .logo{
 }
 .logo a{
@@ -21,7 +20,7 @@
 .logo img{
     max-width: 177px;
 }
-/* Main menu */
+/* -> Main menu */
 .menu__nav .menu__navbar-wrap{
 }
 .menu__navbar-wrap .navigation{
@@ -36,8 +35,6 @@
     display: block;
     padding: 34px 20px;
 }
-
-
 .menu__navbar-wrap .navigation > li:hover a{
     color: var(--theme-primary);
 }
@@ -62,7 +59,7 @@
 .menu__navbar-wrap .navigation > .nav-item:hover a::before{
     display: block;
 }
-/* ---> Active */
+/* ----> Active */
 .menu__navbar-wrap .navigation > .nav-item.active a::before{
     color: var(--theme-primary);
     display: block;
@@ -73,7 +70,7 @@
 .menu__navbar-wrap .navigation > .nav-item:hover a::before{
 
 }
-/* -> Sub nav */
+/* --> Sub nav */
 .menu__navbar-wrap .navigation > .nav-item:hover .sub-menu{
     display: block;
 }
@@ -117,14 +114,15 @@
     animation: fadeIn .5s ease-in;
     display: block;
 }
-/* ---> Active */
+/* ----> Active */
 .menu__navbar-wrap .navigation > .nav-item .sub-menu > li.active::before{
     display: block;
 }
 .menu__navbar-wrap .navigation > .nav-item .sub-menu > li.active > a{
     animation: translateX-10px 0s forwards;
 }
-/* Action menu */
+/* ======================================================================================================================================================== */
+/* -> Action menu */
 .menu__nav .menu__action{
 }
 .menu__action .list-wrap{
@@ -180,7 +178,6 @@
     width: 24px;
     align-self: flex-end;
 }
-
 .menu__action .list-wrap .search:hover a{
     color: var(--theme-primary);
 }
@@ -190,8 +187,7 @@
 .menu__action .list-wrap .side-toggle-icon:hover > span{
     animation: expan .8s forwards;
 }
-
-/* nav-toggler */
+/* -> Nav toggler */
 .nav-toggler{
     text-align: right;
 }
@@ -203,9 +199,9 @@
     margin-left: 28px;
 }
 
-
-
-/* Ovelay */
+/* ======================================================================================================================================================== */
+/* -> Ovelay */
+/* Root */
 .offCanvas__wrap{
     
 }
@@ -222,7 +218,9 @@
     z-index: 99;
     display: none;
 }
-/* Mobile menu */
+/*  */
+/* ======================================================================================================================================================== */
+/* -> Mobile menu */
 .mobile-menu-wrap{
     position: absolute;
     top: 0;
@@ -234,13 +232,12 @@
 .mobile-menu-wrap .row{
     flex-direction: column;
 }
-
 .mobile-menu{
     min-width: 350px;
     position: relative;
     padding: 0 18px;
 }
-/* -> logo */
+/* --> logo */
 .mobile-menu .logo{
     margin-right: 32px;
     padding-top: 32px;
@@ -262,7 +259,6 @@
 .mobile-menu .logo img{
     width: 150px;
 }
-
 /* -> Search */
 .moblie-search{
     padding: 24px 12px;
@@ -288,7 +284,7 @@
 .moblie-search .inp-search > i:hover{
     color: var(--theme-primary);
 }
-/* ->navbar */
+/* -> Navbar moblie */
 .mobile-menu__navbar-wrap .row{
     flex-direction: column;
     font-size: 15px;
@@ -362,7 +358,7 @@
 .mobile-menu__navbar-wrap .sub-menu > li:last-child{
     padding-bottom: 0;
 }
-/* Active */
+/* ----> Active */
 .mobile-menu__navbar-wrap .menu-item-has-children.active .sub-menu{
     display: block;
 }
@@ -370,7 +366,6 @@
     content: '\2212';
     background-color: var(--theme-primary);
 }
-
 .social-links{
     text-align: center;
 }
@@ -392,7 +387,7 @@
     border: none;
     color: var(--color-gray);
 }
-/* ============================================= */
+/* ======================================================================================================================================================== */
 /* Search popup */
 .search__popup-wrap{
     height: 100%;
@@ -414,7 +409,6 @@
     box-shadow: 0px 1px var(--theme-primary);
     position: relative;
 }
-
 .search__popup-wrap .search-form .inp-search >input{
     padding: 24px;
     width: 100%;
@@ -444,8 +438,8 @@
     padding: 12px;
     font-size: 44px;
 }
-
-/* Canvas */
+/* ================================================================================================================================================================ */
+/* -> OffCanvas */
 .offCanvas-body{
     position: absolute;
     right: 0;
@@ -567,7 +561,6 @@
     color: var(--theme-primary);
 }
 .offCanvas-copyright{
-
 }
 .offCanvas-copyright > p{
     font-size: 15px;
@@ -578,6 +571,7 @@
     color: var(--theme-primary);
 }
 /* END: HEADER */
+/* ================================================================================================================================================================ */
 /* BEGIN: MAIN */
 .main-area{
     position: relative;
@@ -585,7 +579,6 @@
     width: 100%;
     z-index: 1;
 }
-
 .breadcrumb-area{
     position: relative;
     top: 0;
@@ -657,7 +650,14 @@
     border-radius: 50%;
     background-color: var(--theme-primary);
 }
-/*  */
+/* ================================================================================================================================================================ */
+/* ================> HOME */
+/* ================================================================================================================================================================ */
+/* -> SLIDER */
+#home-wrap{}
+.home-wrap{
+    display: none;
+}
 .slider-area .breadcrumb-area .container{
     flex-direction: row;
     padding: 0;
@@ -706,9 +706,6 @@
     background: var(--theme-primary);
     clip-path: polygon(28px 0, calc(85% + 2px) 0, 100% 50%, calc(85% + 1px) 100%, 28px 100%, 0% 50%);
     z-index: -1;
-    /* background-image: url(../imgs/slider/border_btn.svg);
-    background-repeat: no-repeat;
-    background-position: left; */
 }
 .slider-area .slider-content .slider-btn button:hover:after{
     background-color: var(--theme-secondary);
@@ -721,14 +718,32 @@
     padding: 0 24px;
     width: 90%;
 }
-/* =====Contact wrap=========== */
+.slider__brand{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    padding: 0px 24px;
+}
+.slider__brand img{
+    padding: 12px;
+    margin: 0 8px;
+}
+.slider__brand:hover a img:not(:hover){
+    opacity: .4;
+}
+/* ================================================================================================================================================================ */
+/* =============> SUB */
+/* ================================================================================================================================================================ */
+/* -> CONTACT*/
 #contact-wrap{
-    display: none;
+    
 }
 .contact-wrap{
-
+    display: none;
 }
-
+.contact-wrap.addOpen{
+    display: block;
+}
 .contact-area{
     width: 100%;
     padding-top: 64px;
@@ -768,7 +783,6 @@
     margin-left: -8px;
     color: var(--theme-primary);
 }
-
 .contact-form{
     margin-top: 32px;
     padding: 0 12px;

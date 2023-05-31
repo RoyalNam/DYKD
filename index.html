@@ -58,23 +58,23 @@
                                             <li><a href="#">Blog details</a></li>
                                         </ul>
                                     </li>
-                                    <li class="nav-item"><a href="#">Contact</a></li>
+                                    <li class="nav-item contact-js"><a href="#">Contact</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col l-3 m-7 c-0">
                             <div class="menu__action">
                                 <ul class="list-wrap row align-center">
-                                    <li class="search menu__action-search"><a href="#">
+                                    <li class="search menu__action-search addOpen-js"><a href="#">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </a></li>
                                     <li class="header-btn">
-                                        <a href="#" class="border-btn">
+                                        <a href="#" class="border-btn contact-js">
                                             <i class="fa-regular fa-pen-to-square"></i>
                                             <span>~Sign in</span>
                                         </a>
                                     </li>
-                                    <li class="side-toggle-icon row">
+                                    <li class="side-toggle-icon row addOpen-js">
                                         <span></span>
                                         <span></span>
                                         <span></span>
@@ -83,7 +83,7 @@
                             </div>
                         </div>
                         <div class="col l-0 m-1 c-4">
-                            <div class="nav-toggler">
+                            <div class="nav-toggler addOpen-js">
                                 <i class="fa-solid fa-bars"></i>
                             </div>
                         </div>
@@ -92,9 +92,89 @@
                 
             </div>
 
+            <!-- Search popup -->
+            <div class="offCanvas__wrap offCanvas__overlay modal-js">
+                <div class="row no-gutters search__popup-wrap modalContainer-js">
+                    <div class="c-12 search__content">
+                        <div class="close-search">
+                            <i class="close-modal fa-brands fa-wolf-pack-battalion"></i>
+                        </div>
+                        <div class="search-content">
+                            <h2 class="search-tit">... search here ...</h2>
+                            <div class="search-form">
+                                <div class="inp-search">
+                                    <input type="text" placeholder="Type keywords here">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OfffCanvas wrap -->
+            <div class="offCanvas__wrap offCanvas__overlay modal-js">
+                <div class="offCanvas-body modalContainer-js">
+                    <div class="offCanvas-top">
+                        <a href="index.html">
+                            <img src="./assets/imgs/logo.png" alt="">
+                        </a>
+                        <i class="close-modal fa-brands fa-wolf-pack-battalion"></i>
+                    </div>
+                    <div class="offCanvas-content">
+                        <h2 class="tit">
+                            BEST SELLER OF MONTH IDEAS FOR <span>NFT WALLET</span> 
+                        </h2>
+                        <div class="offCanvas-contact">
+                            <h4>Contact us</h4>
+                            <ul>
+                                <li>
+                                    <a href="#">+9 333 222 5557</a>
+                                </li>
+                                <li>
+                                    <a href="">info@webmail.com</a>
+                                </li>
+                                <li>
+                                    New Central Park W7 Street, New York
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="offCanvas__newsletter">
+                            <h4>Subscribe</h4>
+                            <form action="" class="offCanvas__newsletter-form">
+                                <input type="text" placeholder="Get News & Updates">
+                                <i class="fa-solid fa-play"></i>
+                            </form>
+                            <p>Subscribe dolor sitamet, consectetur adiping eli. Duis esollici tudin augue.</p>
+                        </div>
+                        <ul class="offCanvas__social">
+                            <div class="social-links">
+                                <ul class="list-wrap">
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-twitter"></i>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                                    </a></li>
+                                    <li><a href="#">
+                                        <i class="fa-brands fa-youtube"></i>
+                                    </a></li>
+                                </ul>
+                            </div>
+                        </ul>
+                    </div>
+                    <div class="offCanvas-copyright">
+                        <p>COPYRIGHT © 2023 - <span>BY MYKD</span></p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Mobile menu wrap -->
-            <div class="offCanvas__wrap offCanvas__overlay">
-                <div class="mobile-menu-wrap">
+            <div class="offCanvas__wrap offCanvas__overlay modal-js">
+                <div class="mobile-menu-wrap modalContainer-js">
                     <nav class="mobile-menu">
                         <div class="row no-gutters">
                             <div class="logo">
@@ -164,90 +244,13 @@
                 </div>
             </div>
 
-            <!-- Search popup -->
-            <div class="offCanvas__wrap offCanvas__overlay">
-                <div class="row no-gutters search__popup-wrap">
-                    <div class="c-12 search__content">
-                        <div class="close-search">
-                            <i class="close-modal fa-brands fa-wolf-pack-battalion"></i>
-                        </div>
-                        <div class="search-content">
-                            <h2 class="search-tit">... search here ...</h2>
-                            <div class="search-form">
-                                <div class="inp-search">
-                                    <input type="text" placeholder="Type keywords here">
-                                    <i class="fa-solid fa-magnifying-glass"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- OfffCanvas wrap -->
-            <div class="offCanvas__wrap offCanvas__overlay">
-                <div class="offCanvas-body">
-                    <div class="offCanvas-top">
-                        <a href="index.html">
-                            <img src="./assets/imgs/logo.png" alt="">
-                        </a>
-                        <i class="close-modal fa-brands fa-wolf-pack-battalion"></i>
-                    </div>
-                    <div class="offCanvas-content">
-                        <h2 class="tit">
-                            BEST SELLER OF MONTH IDEAS FOR <span>NFT WALLET</span> 
-                        </h2>
-                        <div class="offCanvas-contact">
-                            <h4>Contact us</h4>
-                            <ul>
-                                <li>
-                                    <a href="#">+9 333 222 5557</a>
-                                </li>
-                                <li>
-                                    <a href="">info@webmail.com</a>
-                                </li>
-                                <li>
-                                    New Central Park W7 Street, New York
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="offCanvas__newsletter">
-                            <h4>Subscribe</h4>
-                            <form action="" class="offCanvas__newsletter-form">
-                                <input type="text" placeholder="Get News & Updates">
-                                <i class="fa-solid fa-play"></i>
-                            </form>
-                            <p>Subscribe dolor sitamet, consectetur adiping eli. Duis esollici tudin augue.</p>
-                        </div>
-                        <ul class="offCanvas__social">
-                            <div class="social-links">
-                                <ul class="list-wrap">
-                                    <li><a href="#">
-                                        <i class="fa-brands fa-facebook-f"></i>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <i class="fa-brands fa-twitter"></i>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <i class="fa-brands fa-linkedin-in"></i>
-                                    </a></li>
-                                    <li><a href="#">
-                                        <i class="fa-brands fa-youtube"></i>
-                                    </a></li>
-                                </ul>
-                            </div>
-                        </ul>
-                    </div>
-                    <div class="offCanvas-copyright">
-                        <p>COPYRIGHT © 2023 - <span>BY MYKD</span></p>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </header>
     <!-- END: Header -->
     <!-- BEGIN: Main -->
     <main>
+        <!--Begin: HOME -->
         <div id="home-wrap" class="home-wrap">
             <div class="slider-area main-area">
                 <section class="breadcrumb-area">
@@ -284,8 +287,9 @@
                 </section>
             </div>
         </div>
+        <!--End: HOME -->
 
-
+        <!--Begin: SUB -->
         <div id="contact-wrap" class="main-area contact-wrap">
             <section class="breadcrumb-area">
                 <div class="container row">
