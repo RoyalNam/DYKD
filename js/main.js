@@ -97,35 +97,165 @@ toggleModal1(x, y)
 
 
 
-$(document).ready(function() {
-  var startX;
-  var currentSlide = $('.current');
-  var slideWidth = $('.slide').outerWidth();
-  var totalSlides = $('.slide').length;
+// $(document).ready(function() {
+//   var startX;
+//   var currentSlide = $('.current');
+//   var slideWidth = $('.slide').outerWidth();
+//   var totalSlides = $('.slide').length;
   
-  $('.slider').on('mousedown touchstart', function(e) {
+//   $('.slider').on('mousedown touchstart', function(e) {
+//     e.preventDefault();
+//     startX = e.pageX || e.originalEvent.touches[0].pageX;
+//     $(this).on('mousemove touchmove', function(e) {
+//       e.preventDefault();
+//       var moveX = e.pageX || e.originalEvent.touches[0].pageX;
+//       var distance = startX - moveX;
+//       currentSlide.css('transform', 'translate(-' + (slideWidth * $('.current').index() + distance) + 'px)');
+//     });
+//   }).on('mouseup touchend', function(e) {
+//     $(this).off('mousemove touchmove');
+//     var moveX = e.pageX || e.originalEvent.changedTouches[0].pageX;
+//     var distance = startX - moveX;
+//     if (distance > 0 && currentSlide.next().length > 0) {
+//       currentSlide = currentSlide.next().addClass('current');
+//     } else if (distance < 0) {
+//       if (currentSlide.index() == 0) {
+//         currentSlide = $('.slide').eq(totalSlides - 1).addClass('current');
+//       } else {
+//         currentSlide = currentSlide.prev().addClass('current');
+//       }
+//     }
+//     $('.slide').not(currentSlide).removeClass('current');
+//     $('.slider').find('.current').css('transform', 'translate(-' + (slideWidth * $('.current').index()) + 'px)');
+//   });
+// });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var startX;
+  var currentSlide = document.querySelector('.current');
+  var slideWidth = document.querySelector('.swiper-slide').offsetWidth;
+  var slides = document.querySelectorAll('.swiper-slide');
+  var totalSlides = slides.length;
+  var slider = document.querySelector('.swiper-wrap');
+
+  slider.addEventListener('mousedown', function(e) {
     e.preventDefault();
-    startX = e.pageX || e.originalEvent.touches[0].pageX;
-    $(this).on('mousemove touchmove', function(e) {
-      e.preventDefault();
-      var moveX = e.pageX || e.originalEvent.touches[0].pageX;
-      var distance = startX - moveX;
-      currentSlide.css('transform', 'translate(-' + (slideWidth * $('.current').index() + distance) + 'px)');
-    });
-  }).on('mouseup touchend', function(e) {
-    $(this).off('mousemove touchmove');
-    var moveX = e.pageX || e.originalEvent.changedTouches[0].pageX;
+    startX = e.pageX || e.touches[0].pageX;
+    slider.addEventListener('mousemove', handleTouchMove);
+  });
+
+  slider.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    startX = e.touches[0].pageX;
+    slider.addEventListener('touchmove', handleTouchMove);
+  });
+
+  function handleTouchMove(e) {
+    e.preventDefault();
+    var moveX = e.pageX || e.touches[0].pageX;
     var distance = startX - moveX;
-    if (distance > 0 && currentSlide.next().length > 0) {
-      currentSlide = currentSlide.next().addClass('current');
+    currentSlide.style.transform = 'translate(-' + (slideWidth * currentSlide.dataset.index + distance) + 'px)';
+  }
+
+  slider.addEventListener('mouseup', handleTouchEnd);
+  slider.addEventListener('touchend', handleTouchEnd);
+
+  function handleTouchEnd(e) {
+    slider.removeEventListener('mousemove', handleTouchMove);
+    slider.removeEventListener('touchmove', handleTouchMove);
+    var moveX = e.pageX || e.changedTouches[0].pageX;
+    var distance = startX - moveX;
+    if (distance > 0 && currentSlide.nextElementSibling !== null) {
+      currentSlide.classList.remove('current');
+      currentSlide = currentSlide.nextElementSibling;
+      currentSlide.classList.add('current');
     } else if (distance < 0) {
-      if (currentSlide.index() == 0) {
-        currentSlide = $('.slide').eq(totalSlides - 1).addClass('current');
+      if (currentSlide.previousElementSibling === null) {
+        currentSlide.classList.remove('current');
+        currentSlide = slides[totalSlides - 1];
+        currentSlide.classList.add('current');
       } else {
-        currentSlide = currentSlide.prev().addClass('current');
+        currentSlide.classList.remove('current');
+        currentSlide = currentSlide.previousElementSibling;
+        currentSlide.classList.add('current');
       }
     }
-    $('.slide').not(currentSlide).removeClass('current');
-    $('.slider').find('.current').css('transform', 'translate(-' + (slideWidth * $('.current').index()) + 'px)');
-  });
+    slides.forEach(function(slide) {
+      if (slide !== currentSlide) {
+        slide.classList.remove('current');
+      }
+    });
+    slider.querySelector('.current').style.transform = 'translate(-' + (slideWidth * currentSlide.dataset.index) + 'px)';
+  }
 });
+
+// const slides = document.querySelectorAll('.swiper-slide'); // lấy danh sách các slide
+// let index = 0; // slide hiện tại
+
+// setInterval(() => {
+//   slides[index].classList.remove('current'); // ẩn slide hiện tại
+//   index = (index + 1) % slides.length; // chuyển đến slide tiếp theo
+//   slides[index].classList.add('current'); // hiển thị slide mới
+
+//   // xác định slide trước và sau để tạo hiệu ứng chuyển động
+//   let prevIndex = (index - 1 + slides.length) % slides.length;
+//   let nextIndex = (index + 1) % slides.length;
+//   slides[prevIndex].classList.add('prev');
+//   slides[nextIndex].classList.add('next');
+  
+//   // loại bỏ các class đã thêm trước đó để chuẩn bị cho hiệu ứng chuyển động của slide tiếp theo
+//   setTimeout(() => {
+//     slides[prevIndex].classList.remove('prev');
+//     slides[nextIndex].classList.remove('next');
+//   }, 800); // thời gian chuyển động là 0.8s (tương ứng với giá trị của thuộc tính transition)
+// }, 3000); // thời gian hiển thị của mỗi slide là 3 giây (tùy chỉnh theo ý muốn của bạn)
+
+
+// const slides = document.querySelectorAll('.swiper-slide'); // lấy danh sách các slide
+// let index = 0; // slide hiện tại
+
+// document.addEventListener('mousemove', e => {
+//   const x = e.clientX - window.innerWidth / 2; // tính toán vị trí chuột so với trung tâm của trang
+//   if (Math.abs(x) > window.innerWidth / 3) { // nếu vị trí chuột nằm ngoài 1/3 chiều rộng của trang
+//     slides[index].classList.remove('current'); // ẩn slide hiện tại
+
+//     let prevIndex, nextIndex;
+//     if (x < 0) { // nếu vị trí chuột ở bên phải của slide
+//       prevIndex = index;
+//       index = (index + 1) % slides.length; // chuyển đến slide kế tiếp
+//       nextIndex = (index + 1) % slides.length;
+//     } else { // nếu vị trí chuột ở bên trái của slide
+//       nextIndex = index;
+//       index = (index - 1 + slides.length) % slides.length; // chuyển đến slide trước đó
+//       prevIndex = (index - 1 + slides.length) % slides.length;
+//     }
+
+//     slides[index].classList.add('current'); // hiển thị slide mới
+
+//     // di chuyển slide prev và next vào vị trí thích hợp
+//     slides[prevIndex].style.transform = `translateX(${-window.innerWidth / 3}px)`;
+//     slides[nextIndex].style.transform = `translateX(${window.innerWidth / 3}px)`;
+
+//     // đảm bảo slide prev và next nằm phía trên hoặc dưới các slide khác
+//     slides[index].style.zIndex = 2;
+//     slides[prevIndex].style.zIndex = 1;
+//     slides[nextIndex].style.zIndex = 1;
+
+//     // xác định slide trước và sau để tạo hiệu ứng chuyển động
+//     slides[prevIndex].classList.add('prev');
+//     slides[nextIndex].classList.add('next');
+
+//     // loại bỏ các class và style đã thêm trước đó để chuẩn bị cho hiệu ứng chuyển động của slide tiếp theo
+//     setTimeout(() => {
+//       slides[prevIndex].classList.remove('prev');
+//       slides[nextIndex].classList.remove('next');
+//       slides[prevIndex].style.transform = '';
+//       slides[nextIndex].style.transform = '';
+//       slides[index].style.zIndex = 1;
+//       slides[prevIndex].style.zIndex = '';
+//       slides[nextIndex].style.zIndex = '';
+//     }, 800); // thời gian chuyển động là 0.8s (tương ứng với giá trị của thuộc tính transition)
+//   }
+// });
