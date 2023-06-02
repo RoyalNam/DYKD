@@ -86,9 +86,46 @@ Array.from(addOpens).forEach((navToggler, i) => {
 function toggleModal1(modalElem, containerElem) {
     containerElem.addEventListener("click", function (event) {
       modalElem.classList.add("addOpen");
+      const home_wrap = document.getElementById("home-wrap");
+      home_wrap.remove.classList("open");
       event.stopPropagation();
     });
   }
 const x = document.querySelector(".contact-wrap")
 const y = document.querySelector(".contact-js")
 toggleModal1(x, y)
+
+
+
+$(document).ready(function() {
+  var startX;
+  var currentSlide = $('.current');
+  var slideWidth = $('.slide').outerWidth();
+  var totalSlides = $('.slide').length;
+  
+  $('.slider').on('mousedown touchstart', function(e) {
+    e.preventDefault();
+    startX = e.pageX || e.originalEvent.touches[0].pageX;
+    $(this).on('mousemove touchmove', function(e) {
+      e.preventDefault();
+      var moveX = e.pageX || e.originalEvent.touches[0].pageX;
+      var distance = startX - moveX;
+      currentSlide.css('transform', 'translate(-' + (slideWidth * $('.current').index() + distance) + 'px)');
+    });
+  }).on('mouseup touchend', function(e) {
+    $(this).off('mousemove touchmove');
+    var moveX = e.pageX || e.originalEvent.changedTouches[0].pageX;
+    var distance = startX - moveX;
+    if (distance > 0 && currentSlide.next().length > 0) {
+      currentSlide = currentSlide.next().addClass('current');
+    } else if (distance < 0) {
+      if (currentSlide.index() == 0) {
+        currentSlide = $('.slide').eq(totalSlides - 1).addClass('current');
+      } else {
+        currentSlide = currentSlide.prev().addClass('current');
+      }
+    }
+    $('.slide').not(currentSlide).removeClass('current');
+    $('.slider').find('.current').css('transform', 'translate(-' + (slideWidth * $('.current').index()) + 'px)');
+  });
+});

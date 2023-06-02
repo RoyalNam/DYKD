@@ -13,7 +13,9 @@ body{
     --theme-secondary: #ffbe18;
     --bg-primary: #0f161b;
     --color-gray: #182029;
+    --color-black: #0b0e13;
     --body-color: #adb0bc;
+    --boder-gray: rgba(76, 76, 76, 0.5);
 }
 .align-center{
     align-items: center;
@@ -68,3 +70,19 @@ ul{
         width: 100%;
     }
 }
+
+
+
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #ccc;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: -webkit-linear-gradient(left, #485563, #29323c);
+    border-radius: 10px;
+  }
+  
