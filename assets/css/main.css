@@ -852,36 +852,24 @@
     background: url(../imgs/bg/area_bg01.jpg) center top no-repeat;
     background-size: cover;    
 }
-/* ================================================================================================================================================================ */
-/* About */
-.about-area{
-    
-}
-.about-container{
-    padding: 64px 24px;
-}
-.about-container > .row{
-    justify-content: center;
-    padding: 0 24px;
-    color: var(--color-white);
-}
-.about-container .about-tit{
+.section-tit{
     padding: 32px 0;
     text-align: center;
     text-transform: uppercase;
 }
-.about-container .about-tit p{
+.section-tit p{
     font-size: 18px;
     color: var(--theme-primary);
     margin: 16px 0;
 }
-.about-container .about-tit h4{
+.section-tit h4{
+    color: var(--color-white);
     position: relative;
     padding-bottom: 32px;
     font-size: 36px;
     font-weight: 800;
 }
-.about-container .about-tit h4::after{
+.section-tit h4::after{
     position: absolute;
     content: "";
     bottom: 0;
@@ -892,6 +880,20 @@
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
 }
+/* ================================================================================================================================================================ */
+/* About */
+.about-area{
+    
+}
+.about-container{
+    padding: 64px 12px;
+}
+.about-container > .row{
+    justify-content: center;
+    padding: 0 24px;
+    color: var(--color-white);
+}
+
 .about-container .about__tap-wrap{
     text-align: center;
 }
@@ -1117,9 +1119,20 @@
 }
 .gallery__slider .swiper-container{
     color: var(--color-white);
-    
-
+    position: relative;
+    padding-bottom: 32px;
 }
+
+.swiper-container::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 80%;
+    transform: translateX(-50%);
+    border-bottom: 3px solid var(--theme-primary);
+}
+
 .swiper-container > .swiper-wrap{
     position: relative;
     max-width: 100%;
@@ -1178,12 +1191,401 @@
     font-weight: 200;
 }
 /* ================================================================================================================================================================ */
+.team-area{
+    padding-top: 64px;
+    padding-bottom: 88px;
+    background: url(../imgs/bg/team_bg.jpg) center center no-repeat;
+    background-size: cover;
+}
+.team-wraper{
+
+}
+.team-wraper > .row{
+    padding: 0 24px;
+    justify-content: center;
+}
+.team__item{
+    position: relative;
+    margin-top: 24px;
+    background-color: var(--color-gray);
+    color: var(--color-white);text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform .5s linear;
+    opacity: .9;
+}
+.team__item:hover{
+    opacity: 1;
+    transform: translateY(-10px);
+}
+/* .team__item:hover::after,
+.team__item:hover::before{
+    opacity: 1;
+} */
+.team__item::after, 
+.team__item::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    width: 30%;
+    height: 60%;
+    background-color: var(--theme-primary);
+    transform: rotate(-55deg);
+    /* opacity: .7; */
+}
+.team__item::before{
+    left: 0;
+}
+.team__item::after{
+    transform: rotate(55deg);
+    right: 0
+}
+.team__thumb{
+    padding: 32px 32px 0;
+}
+.team__thumb a{
+    display: block;
+}
+.team__thumb img{
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+}
+.team__content{
+    padding: 32px 0;
+}
+.team__content .name{
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 800;
+    margin: 8px 0;
+}
+.team__content .designation{
+    text-transform: capitalize;
+    font-size: 15px;
+    color: var(--theme-primary);
+}
+/* ================================================================================================================================================================ */
+.video-area{
+    background: url(../imgs/bg/video_bg.jpg) center center no-repeat;
+    background-size: cover;
+    padding: 64px 0;
+}
+.vider-wrap{
+    text-align: center;
+    padding: 64px 0;
+    color: var(--color-white);
+}
+.vider-wrap .link_video{
+    display: block;
+}
+.vider-wrap .link_video i{
+    font-size: 38px;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    border-radius: 50%;
+    color: var(--color-gray);
+    background-color: var(--color-white);
+}
+.vider-wrap .link_video i:hover{
+    background-color: var(--theme-primary);
+}
+.vider-wrap h4{
+    font-size: 44px;
+    font-weight: 900;
+    margin-top: 32px;
+    text-transform: uppercase;
+}
+.vider-wrap h4 >span{
+    color: var(--theme-primary);
+}
+.vider-wrap p{
+    font-size: 18px;
+    margin: 16px 0;
+}
+.vider-wrap .link_discord{
+    display: block;
+    margin: 32px 0;
+}
+.vider-wrap .link_discord button{
+    padding: 24px 32px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 800;
+    border: none;
+    color: var(--color-black);
+    background-color: var(--theme-primary);
+}
+.vider-wrap .link_discord button:hover{
+    background-color: var(--color-white);
+}
+/* ================================================================================================================================================================ */
+.roadMap{
+    padding: 120px 0;
+    background: url(../imgs/bg/roadmap_bg.jpg) center center no-repeat;
+    background-size: cover;
+    color: var(--color-white);
+}
+.roadMap .row{
+    padding: 0 24px;
+}
+.roadMap-content{
+    padding-right: 48px;
+    margin-top: 12px;
+}
+.roadMap-content h4{
+    text-transform: uppercase;
+    font-size: 48px;
+}
+.roadMap-content p{
+    font-size: 18px;
+    color: var(--body-color);
+    margin: 32px 0;
+}
+.roadMap-btn{
+    display: block;
+    text-decoration: none;
+}
+.roadMap-btn button{
+    margin-top: 12px;
+    padding: 22px 32px;
+    border: none;
+    background-color: var(--theme-secondary);
+    border-radius: 4px;
+    color: var(--color-black);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.roadMap-btn button:hover{
+    background-color: var(--theme-primary);
+}
+.roadMap-img{
+    margin-top: 32px;
+}
+.roadMap-img img{
+    transition: transform .6s linear;
+}
+.roadMap-img:hover img{
+    transform: translate(12px, -12px);
+}
+.roadMap__steps-wrap{
+    position: relative;
+    padding-left: 24px;
+    margin-top: 12px;
+}
+.roadMap__steps-wrap::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    width: 8px;
+    background: linear-gradient(to bottom, var(--theme-primary) 0%, #10161c 100%);
+    border-radius: 8px;
+    z-index: 1;
+}
+.roadMap__steps-item{
+    border-radius: 8px;
+    padding: 32px 24px;
+    background-color: var(--color-gray);
+    margin: 32px 0;
+    position: relative;
+}
+.roadMap__steps-item::before{
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 16px solid transparent;
+    border-left: 16px solid var(--theme-primary);
+    border-bottom: 16px solid transparent;
+    display: none;
+}
+.roadMap__steps-item h4{
+    font-size: 24px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+.roadMap__steps-item ul{
+    list-style-type: none;
+}
+.roadMap__steps-item li{
+    font-size: 20px;
+    padding: 8px 32px;
+    position: relative;
+}
+.roadMap__steps-item li::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-color: var(--color-black);
+    border-radius: 50%;
+    border: 1px solid var(--boder-gray);
+}
+.roadMap__steps-item li.active::before{
+    background-color: var(--theme-primary);
+}
+.roadMap__steps-item li.active:hover::before{
+    background-color: var(--theme-secondary);
+}
+.roadMap__steps-item.active{
+
+}
+.roadMap__steps-item img{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    opacity: .5;
+    display: none;
+}
+.roadMap__steps-item.active img,
+.roadMap__steps-item.active::before{
+    display: block;
+}
+/* ================================================================================================================================================================ */
+.topTrendingNft-area{
+    padding: 100px 24px;
+    background-color: #10181f;
+    color: var(--color-white);
+}
+.trendingNft__tit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+}
+.trendingNft__txt{
+    margin-right: 16px;
+    font-size: 32px;
+}
+.trendingNft__tit img{
+    margin-right: auto;
+    width: 32px;
+}
+.trendingNft__nav i{
+    text-align: center;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 24px;
+    margin-left: 12px;
+    border-radius: 50%;
+    border: 1px solid var(--color-white);
+}
+.trendingNft__nav i:hover{
+    color: var(--theme-primary);
+    border-color: var(--theme-primary);
+}
+.swiper__wrap{
+
+}
+.swiper__wrap .row{
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+.trendingNft__item{
+    margin-top: 32px;
+    background: url(../imgs/bg/trendnft_img.png) center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: 18px;
+    border-radius: 8px;
+}
+.trendingNft__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.trendingNft__avatar{
+    display: flex;
+    align-items: center;
+}
+.trendingNft__avatar .info{
+    margin-left: 12px;
+}
+.trendingNft__avatar .info a{
+    color: var(--body-color);
+    font-size: 14px;
+}
+.trendingNft__wish{
+
+}
+.trendingNft__img{
+    position: relative;
+    padding: 16px 0;
+}
+.trendingNft__img::after{
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-image: linear-gradient(to right,var(--color-black)  0% ,var(--color-white) 50%, var(--color-black) 100%);
+}
+.trendingNft__img img{
+    border-radius: 8px;
+    width: 100%;
+}
+.trendingNft__bottom{
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px
+}
+
+.trendingNft__bottom .bottom{
+    display: inline-block;
+}
+.trendingNft__bottom .price{
+    display: flex;
+    margin-top: 8px;
+}
+.trendingNft__bottom .bottom > p{
+    font-size: 14px;
+}
+.trendingNft__bottom .price span{
+    color: var(--theme-primary);
+}
+.trendingNft__bottom .price img{
+    width: 16px;
+    margin-bottom: 1px;
+    margin-right: 6px;
+}
+.trendingNft__bottom .btn{
+    display: block;
+}
+.trendingNft__bottom .btn button{
+    padding: 8px 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--theme-secondary);
+}
+.trendingNft__bottom .btn button:hover{
+    background-color: var(--theme-primary);
+}
+.trendingNft__bottom .btn button i{
+    margin-left: 8px;
+}
+
+/* ================================================================================================================================================================ */
 /* =============> SUB */
 /* ================================================================================================================================================================ */
 /* -> CONTACT*/
 #contact-wrap{
     
 }
+
 .contact-wrap{
     display: none;
 }
@@ -1286,7 +1688,7 @@
 .footer-wrap{
     padding-top: 80px;
     padding-bottom: 64px;
-    background-color: var(--color-gray);
+    background-color: var(--bg-primary);
     color: var(--color-white);
 }
 .footer-widget{
@@ -1375,7 +1777,7 @@
     border: none;
 }
 .footer-copyright{
-    background-color: var(--bg-primary);
+    background-color: var(--color-black);
     color: var(--color-white);
 }
 .img-paycart{

@@ -60,17 +60,28 @@
         background-position: center;
     }
 
-     
+    .roadMap .row .col{
+        flex: 100%;
+        max-width: 100%;
+    }
     
 }
 @media (max-width: 740px){
-    .menu__nav, .contact-area > .row,
+    /* .menu__nav, .contact-area > .row,
     .slider-area .container,
     .ntf-container > .row,
     .about-container .tab-content > .row{
         max-width: 540px;
         margin: 0 auto;
+    } */
+    .about-container{
+        padding-left: 0;
+        padding-right: 0;
     }
+    .slider__brand{
+        justify-content: center;
+    }
+
     .offCanvas-body{
         width: 100%;
         max-width: 100%;
