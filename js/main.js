@@ -1,55 +1,27 @@
-function addActive(myList_ID, items_CL){
-    const myList = document.getElementById(myList_ID);
-    const items = myList.getElementsByClassName(items_CL);
-    for(let i=0; i<items.length; i++) {
-        items[i].addEventListener("click", function() {
-            // remove "active" class from all items
-            for(let j=0; j<items.length; j++) {
-            items[j].classList.remove("active");
-            }
-            // add "active" class to the clicked item
-            this.classList.add("active");
-        });
-    }
-}
-addActive("navigation", "nav-item");
+// Sự kiện cuộn trang
+let prevSrollPos = window.pageYOffset;
+window.onscroll = function(){
+  let currentScroolPos = window.pageYOffset;
 
-function addActiveTagName(myList_CL, tagName){
-    const lists = document.getElementsByClassName(myList_CL);
-    for(let i=0; i<lists.length; i++) {
-    const items = lists[i].getElementsByTagName(tagName);
-    for(let j=0; j<items.length; j++) {
-        items[j].addEventListener("click", function() {
-        // remove "active" class from all items in the same list
-        const siblings = this.parentNode.getElementsByTagName(tagName);
-        for(let k=0; k<siblings.length; k++) {
-            siblings[k].classList.remove("active");
-        }
-        // add "active" class to the clicked item
-        this.classList.add("active");
-        });
-    }
-    }
-}
-addActiveTagName("sub-menu", "li");
+  if(prevSrollPos > currentScroolPos){
+    document.getElementById("sticky-header").classList.remove("hidden");
+  }
+  else  document.getElementById("sticky-header").classList.add("hidden");
 
-function addActiveNoC(myList_ID, items_CL){
-    const myList = document.getElementById(myList_ID);
-    const items = myList.getElementsByClassName(items_CL);
-    for(let i=0; i<items.length; i++) {
-        items[i].addEventListener("click", function() {
-            if(this.classList.contains("active"))
-                this.classList.remove("active");
-            else    
-            // add "active" class to the clicked item
-                this.classList.add("active");
-        });
-    }
-}
-addActiveNoC("mobile-menu__navbar-wrap", "menu-item-has-children");
+  if(currentScroolPos < 250)
+    document.getElementById("scroll__top").classList.remove("hidden");
+  else  document.getElementById("scroll__top").classList.add("hidden");
 
-// 
-// Add open
+  prevSrollPos = currentScroolPos;
+}
+
+const scrollTop = document.getElementById("scroll__top");
+scrollTop.addEventListener("click", function(){
+  document.documentElement.scrollTop = 0;
+});
+
+
+
 // Add open
 const addOpens = document.querySelectorAll(".addOpen-js");
 const modals = document.querySelectorAll(".modal-js");
@@ -97,41 +69,56 @@ toggleModal1(x, y)
 
 
 
-// $(document).ready(function() {
-//   var startX;
-//   var currentSlide = $('.current');
-//   var slideWidth = $('.slide').outerWidth();
-//   var totalSlides = $('.slide').length;
-  
-//   $('.slider').on('mousedown touchstart', function(e) {
-//     e.preventDefault();
-//     startX = e.pageX || e.originalEvent.touches[0].pageX;
-//     $(this).on('mousemove touchmove', function(e) {
-//       e.preventDefault();
-//       var moveX = e.pageX || e.originalEvent.touches[0].pageX;
-//       var distance = startX - moveX;
-//       currentSlide.css('transform', 'translate(-' + (slideWidth * $('.current').index() + distance) + 'px)');
-//     });
-//   }).on('mouseup touchend', function(e) {
-//     $(this).off('mousemove touchmove');
-//     var moveX = e.pageX || e.originalEvent.changedTouches[0].pageX;
-//     var distance = startX - moveX;
-//     if (distance > 0 && currentSlide.next().length > 0) {
-//       currentSlide = currentSlide.next().addClass('current');
-//     } else if (distance < 0) {
-//       if (currentSlide.index() == 0) {
-//         currentSlide = $('.slide').eq(totalSlides - 1).addClass('current');
-//       } else {
-//         currentSlide = currentSlide.prev().addClass('current');
-//       }
-//     }
-//     $('.slide').not(currentSlide).removeClass('current');
-//     $('.slider').find('.current').css('transform', 'translate(-' + (slideWidth * $('.current').index()) + 'px)');
-//   });
-// });
+// Header
+
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
+const navMain = $$('.nav-main');
+const mainItem = $$('.main-area');
+
+navMain.forEach((item, index) => {
+  item.onclick = function(){
+    $('.nav-main.active').classList.remove('active')
+    $('.main-area.active').classList.remove('active')
+
+    this.classList.add('active')
+    mainItem[index].classList.add('active')
+  }
+})
+// 
+function addActive(myList_ID, items_CL){
+  const myList = document.getElementById(myList_ID);
+  const items = myList.getElementsByClassName(items_CL);
+  for(let i=0; i<items.length; i++) {
+      items[i].addEventListener("click", function() {
+          // remove "active" class from all items
+          for(let j=0; j<items.length; j++) {
+          items[j].classList.remove("active");
+          }
+          // add "active" class to the clicked item
+          this.classList.add("active");
+      });
+  }
+}
+addActive("navigation", "nav-item");
+
+// 
+function addActiveNoC(myList_ID, items_CL){
+  const myList = document.getElementById(myList_ID);
+  const items = myList.getElementsByClassName(items_CL);
+  for(let i=0; i<items.length; i++) {
+      items[i].addEventListener("click", function() {
+          this.classList.toggle('active')
+      });
+  }
+}
+addActiveNoC("mobile-menu__navbar-wrap", "menu-item-has-children");
+
+//
 
 
-
+// Slide
 document.addEventListener('DOMContentLoaded', function() {
   var startX;
   var currentSlide = document.querySelector('.current');
@@ -190,25 +177,52 @@ document.addEventListener('DOMContentLoaded', function() {
     slider.querySelector('.current').style.transform = 'translate(-' + (slideWidth * currentSlide.dataset.index) + 'px)';
   }
 });
+var services = document.querySelectorAll('.services-item')
+var servicesImgs = document.querySelectorAll('.services-img');
 
-// const slides = document.querySelectorAll('.swiper-slide'); // lấy danh sách các slide
-// let index = 0; // slide hiện tại
+var  serviceId = null;
 
-// setInterval(() => {
-//   slides[index].classList.remove('current'); // ẩn slide hiện tại
-//   index = (index + 1) % slides.length; // chuyển đến slide tiếp theo
-//   slides[index].classList.add('current'); // hiển thị slide mới
 
-//   // xác định slide trước và sau để tạo hiệu ứng chuyển động
-//   let prevIndex = (index - 1 + slides.length) % slides.length;
-//   let nextIndex = (index + 1) % slides.length;
-//   slides[prevIndex].classList.add('prev');
-//   slides[nextIndex].classList.add('next');
-  
-//   // loại bỏ các class đã thêm trước đó để chuẩn bị cho hiệu ứng chuyển động của slide tiếp theo
-//   setTimeout(() => {
-//     slides[prevIndex].classList.remove('prev');
-//     slides[nextIndex].classList.remove('next');
-//   }, 800); // thời gian chuyển động là 0.8s (tương ứng với giá trị của thuộc tính transition)
-// }, 3000); // thời gian hiển thị của mỗi slide là 3 giây (tùy chỉnh theo ý muốn của bạn)
+for(var i=0;i<services.length;i++){
+  services[i].addEventListener('mouseover', function(){
 
+    serviceId = this.dataset.service;
+    // if(servicesImgs[i].id == serviceId && servicesImgs[i].classList.contains('active')){
+    //   servicesImgs[i].classList.remove('active');
+    // }
+
+    var serviceAct = document.getElementById(serviceId);
+    serviceAct.classList.add('active');
+
+    for(var j=0;j<servicesImgs.length;j++)
+      if(servicesImgs[j].id !== serviceId){
+          servicesImgs[j].classList.remove('active');
+      }
+  });
+}
+const tabList = $('.shop__details-wrap')
+const tabItem = tabList.querySelectorAll('.tab-item')
+const tabPane = tabList.querySelectorAll('.tab-pane')
+
+tabItem.forEach((item, ind) => {
+  item.onclick = function(){
+    console.log('accc')
+    $('.tab-pane.active').classList.remove('active')
+
+    tabPane[ind].classList.add('active')
+    
+  }
+})
+const proTabList = $('.product__desc-wrap')
+const proTabItem = proTabList.querySelectorAll('.tab-item')
+const proTabPane = proTabList.querySelectorAll('.tab-pane')
+
+proTabItem.forEach((item, ind) => {
+  item.onclick = function(){
+    $('.product__desc-wrap .tab-pane.active').classList.remove('active')
+    $('.product__desc-wrap .tab-item.active').classList.remove('active')
+
+    this.classList.add('active')
+    proTabPane[ind].classList.add('active')
+  }
+})

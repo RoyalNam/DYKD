@@ -32,6 +32,49 @@
         max-width: 540px;
         flex: 100%;
     } 
+    .tournament__list-live{
+        margin: 0 auto;
+    }
+    .tournament__list-live{
+        margin-top: 32px;
+    }
+    .tournament__list-item .col:nth-child(3)::after{
+        display: none;
+    }
+    /* .shop-wrap > .grid > .row{
+        flex-direction: column-reverse;
+    } */
+
+    .shop__details-wrap > .row{
+        flex-direction: column-reverse;
+
+    }
+    .shop__details-wrap .tab-list{
+        flex-direction: row;
+        margin-top: 24px;
+    }
+    .shop__details-wrap .tab-list > .tab-item{
+        margin-right: 18px;
+        width: 80px;
+    }
+
+
+    .shop__details-wrap .tab-list > .tab-item img{
+        width: 64px;
+        height: 64px;
+        object-fit: cover;
+    }
+}
+@media (max-width: 1114px) and (min-width: 1024px){
+    .tournament__list-area > .grid > .row > .col{
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+@media (max-width: 1023px) and (min-width: 740px){
+    .tournament__list-item .col > div{
+        padding-left: 18px;
+    }
 }
 @media (max-width: 1023px){
     .menu__nav, .contact-area > .row,
@@ -64,16 +107,14 @@
         flex: 100%;
         max-width: 100%;
     }
+    .breadcrumb-area{
+        min-height: 380px;
+    }
+
     
+
 }
 @media (max-width: 740px){
-    /* .menu__nav, .contact-area > .row,
-    .slider-area .container,
-    .ntf-container > .row,
-    .about-container .tab-content > .row{
-        max-width: 540px;
-        margin: 0 auto;
-    } */
     .about-container{
         padding-left: 0;
         padding-right: 0;
@@ -101,4 +142,26 @@
         max-width: 280px;
         flex: 100%;
     } 
+
+    .about-second__imgs{
+        flex-direction: column;
+    }
+    .about-second__imgs img{
+        min-width: 100%;
+        flex: 100%;
+    }
+    .about-second__desc{
+        position: relative;
+        text-align: center;
+        margin-top: 32px;
+        max-width: 100%;
+    }
+    .services-wrap{
+        text-align: center;
+    }
+
+    .tournament__box-wrap{
+        margin-left: 24px;
+        margin-right: 24px;
+    }
 }
