@@ -620,7 +620,7 @@
     min-height: 480px;
     z-index: -1;
     padding: 120px 0 75px;
-    background-image: url(/assets/imgs/slider/slider_bg.jpg);
+    background-image: url(../imgs/bg/roadmap_bg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
